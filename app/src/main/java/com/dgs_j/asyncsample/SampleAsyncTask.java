@@ -29,16 +29,24 @@ public class SampleAsyncTask extends AsyncTask<String, Integer, String> {
      */
     @Override
     protected String doInBackground(String... params) {
-
-        return null;
+        //通信処理や時間のかかる処理を記載する。
+        return null;//この戻り値はonPostExecuteの引数で受け取ることができる
     }
-    /**
-     * バックグラウンド処理が終了した後に
-     * 実行したい処理をこちらに記載する。
+
+    /*(非 Javadoc)
+     * @see android.os.AsyncTask#onPostExecute(java.lang.Object)
+     *
+     * extends AsyncTask<String, Integer, Integer>などで指定した最後の型で、
+     * protected Integer doInBackground(String... params) {の戻り値が発生した際に
+     * このファイルは実行される。
+     *
+     * ※終了後に行う処理は、時間差などが起こるので、ここでまとめて行うこと。
+     *
      */
     @Override
     protected void onPostExecute(String str) {
         super.onPostExecute(str);
+
     }
 
     @Override

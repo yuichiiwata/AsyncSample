@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //実行の際は毎回インスタンスの再生成が必要になる。
         SampleAsyncTask task = new SampleAsyncTask(this);
         task.execute();
     }
