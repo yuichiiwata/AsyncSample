@@ -2,13 +2,14 @@ package com.dgs_j.asyncsample;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 /**
  * AsyncTask サンプル
  * 非同期通信サンプル
- * Created by iwata on 2015/09/07.
+ * Created by iwata on 2017/12/11.
  */
 public class MainActivity extends Activity {
 
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
         //実行の際は毎回インスタンスの再生成が必要になる。
         SampleAsyncTask task = new SampleAsyncTask(this);
         task.execute();
+        Log.d("AsyncTask","AsyncTask：開始");
     }
 
     @Override

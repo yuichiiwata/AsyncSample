@@ -2,9 +2,10 @@ package com.dgs_j.asyncsample;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 
 /**
- * Created by iwata on 2015/09/07.
+ * Created by iwata on 2017/12/11.
  */
 public class SampleAsyncTask extends AsyncTask<String, Integer, String> {
     Activity act;
@@ -16,6 +17,7 @@ public class SampleAsyncTask extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        Log.d("AsyncTask","AsyncTask：事前準備");
     }
 
     @Override
@@ -29,6 +31,8 @@ public class SampleAsyncTask extends AsyncTask<String, Integer, String> {
      */
     @Override
     protected String doInBackground(String... params) {
+        Log.d("AsyncTask","AsyncTask：非同期処理中");
+
         //通信処理や時間のかかる処理を記載する。
         return null;//この戻り値はonPostExecuteの引数で受け取ることができる
     }
@@ -46,6 +50,7 @@ public class SampleAsyncTask extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String str) {
         super.onPostExecute(str);
+        Log.d("AsyncTask","AsyncTask：終了");
 
     }
 
